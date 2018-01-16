@@ -1,15 +1,17 @@
 import React from "react";
 import Search from "./Search";
+import Games from "./Games";
 import api from "../utils/api";
 
 const DEFAULT_QUERY = "megaman";
 
-class Test extends React.Component {
+class MainPage extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      searchTerm: ""
+      searchTerm: "",
+      games: ""
     };
 
     this.onSearch = this.onSearch.bind(this);
@@ -23,16 +25,27 @@ class Test extends React.Component {
   onSubmit(e) {
     const { searchTerm } = this.state;
     this.setState({ searchTerm });
-    api.getGames(searchTerm);
+    api
+      .getGames(searchTerm)
+      .then(res => res.json())
+      .then(res => {
+        this.setState({ games: res });
+        console.log(this.state.games);
+      });
     e.preventDefault();
   }
 
   componentDidMount() {
-    api.loadUp(DEFAULT_QUERY);
+    api
+      .loadUp(DEFAULT_QUERY)
+      .then(res => res.json())
+      .then(res => {
+        console.log(res);
+      });
   }
 
   render() {
-    const { searchTerm } = this.props;
+    const { searchTerm, games } = this.state;
     return (
       <section>
         <div className="container">
@@ -44,9 +57,21 @@ class Test extends React.Component {
             Search
           </Search>
         </div>
+
+        {!games ? (
+          <section>
+            <p>Hi</p>
+          </section>
+        ) : (
+          <section>
+            <div>
+              <Games games={games} />
+            </div>
+          </section>
+        )}
       </section>
     );
   }
 }
 
-export default Test;
+export default MainPage;

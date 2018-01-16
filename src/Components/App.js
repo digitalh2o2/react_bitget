@@ -1,13 +1,16 @@
 import React, { Component } from "react";
-import Test from "./Test";
+import MainPage from "./MainPage";
 import "../App.css";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class App extends Component {
   render() {
     return (
-      <div className="container">
-        <Test />
-      </div>
+      <Router>
+        <div className="container">
+          <MainPage />
+        </div>
+      </Router>
     );
   }
 }

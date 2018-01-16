@@ -13,6 +13,7 @@ class Search extends React.Component {
                 className="input"
                 value={value}
                 onChange={onChange}
+                placeholder="Search For A Game"
               />
             </div>
             <div className="control">
