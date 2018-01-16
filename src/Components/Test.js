@@ -1,7 +1,7 @@
 import React from "react";
 import Search from "./Search";
+import api from "../utils/api";
 
-var proxyUrl = "https://cors-anywhere.herokuapp.com/";
 const DEFAULT_QUERY = "megaman";
 
 class Test extends React.Component {
@@ -22,47 +22,13 @@ class Test extends React.Component {
 
   onSubmit(e) {
     const { searchTerm } = this.state;
-    this.setState({ searchTerm: searchTerm });
-    fetch(
-      proxyUrl +
-        `https://api-2445582011268.apicast.io/games/?search=${searchTerm}&fields=name,cover`,
-      {
-        method: "GET",
-        headers: {
-          "user-key": "6e6712c1c94feb2bc74251324d8184db",
-          Accept: "application/json"
-        }
-      }
-    )
-      .then(res => res.json())
-      .then(resData => {
-        console.log(resData);
-      })
-      .catch(err => {
-        console.log(err);
-      });
+    this.setState({ searchTerm });
+    api.getGames(searchTerm);
     e.preventDefault();
   }
 
-  componentWillMount() {
-    fetch(
-      proxyUrl +
-        `https://api-2445582011268.apicast.io/games/?search=${DEFAULT_QUERY}&fields=name,cover`,
-      {
-        method: "GET",
-        headers: {
-          "user-key": "6e6712c1c94feb2bc74251324d8184db",
-          Accept: "application/json"
-        }
-      }
-    )
-      .then(res => res.json())
-      .then(resData => {
-        console.log(resData);
-      })
-      .catch(err => {
-        console.log(err);
-      });
+  componentDidMount() {
+    api.loadUp(DEFAULT_QUERY);
   }
 
   render() {
