@@ -10,14 +10,33 @@ class Games extends React.Component {
           <div className="columns is-multiline">
             {games.map((game, index) => {
               return (
-                <div key={index} className="column is-one-quarter">
-                  <Link to="/hi">
-                    <h2>{game.name}</h2>
-                  </Link>
+                <div key={index} className="column is-half pop">
                   {!game.cover ? (
-                    <p>No image</p>
+                    <div className="box">
+                      <article className="media">
+                        <div className="media-left">
+                          <p>No image</p>
+                        </div>
+                        <div className="content">
+                          <p>
+                            <strong>{game.name}</strong>
+                          </p>
+                        </div>
+                      </article>
+                    </div>
                   ) : (
-                    <img src={game.cover.url} alt={game.name} />
+                    <div className="box">
+                      <article className="media">
+                        <div className="media-left">
+                          <img src={game.cover.url} alt={game.name} />
+                        </div>
+                        <div className="content">
+                          <p>
+                            <strong>{game.name}</strong>
+                          </p>
+                        </div>
+                      </article>
+                    </div>
                   )}
                 </div>
               );

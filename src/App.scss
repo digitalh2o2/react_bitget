@@ -6,3 +6,15 @@
 .the-grid {
   padding-top: 50px;
 }
+
+img {
+  border-radius: 5%;
+}
+
+.pop {
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}

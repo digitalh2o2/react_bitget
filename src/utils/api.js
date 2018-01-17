@@ -31,5 +31,19 @@ module.exports = {
     );
 
     return response;
+  },
+  singleGame(id) {
+    const response = fetch(
+      proxyUrl + `https://api-2445582011268.apicast.io/games/${id}?fields=*`,
+      {
+        method: "GET",
+        headers: {
+          "user-key": key,
+          Accept: "application/json"
+        }
+      }
+    );
+
+    return response;
   }
 };
