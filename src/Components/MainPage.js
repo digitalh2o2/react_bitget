@@ -46,6 +46,7 @@ class MainPage extends React.Component {
 
   render() {
     const { searchTerm, games } = this.state;
+    const { match } = this.props;
     return (
       <section>
         <div className="container">
@@ -65,7 +66,7 @@ class MainPage extends React.Component {
         ) : (
           <section>
             <div>
-              <Games games={games} />
+              <Games games={games} match={match} />
             </div>
           </section>
         )}

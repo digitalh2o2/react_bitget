@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 
 class Games extends React.Component {
   render() {
-    const { games } = this.props;
+    console.log(this.props);
+    const { games, match } = this.props;
     return (
       <section>
         <div className="container has-text-centered the-grid">
@@ -18,9 +19,11 @@ class Games extends React.Component {
                           <p>No image</p>
                         </div>
                         <div className="content">
-                          <p>
-                            <strong>{game.name}</strong>
-                          </p>
+                          <Link to={`${match.url}/${game.name}`}>
+                            <p>
+                              <strong>{game.name}</strong>
+                            </p>
+                          </Link>
                         </div>
                       </article>
                     </div>
@@ -31,9 +34,11 @@ class Games extends React.Component {
                           <img src={game.cover.url} alt={game.name} />
                         </div>
                         <div className="content">
-                          <p>
-                            <strong>{game.name}</strong>
-                          </p>
+                          <Link to={`${match.url}/${game.name}`}>
+                            <p>
+                              <strong>{game.name}</strong>
+                            </p>
+                          </Link>
                         </div>
                       </article>
                     </div>
