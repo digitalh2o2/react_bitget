@@ -18,3 +18,9 @@ img {
     transform: scale(1.05);
   }
 }
+
+.progress-ring__circle {
+  transition: 1.35s stroke-dashoffset ease-in;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}

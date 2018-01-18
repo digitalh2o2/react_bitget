@@ -21,7 +21,7 @@ class Games extends React.Component {
                         <div className="content">
                           <Link
                             to={{
-                              pathname: `${match.url}/${game.name}`,
+                              pathname: `${match.url}/${game.slug}`,
                               params: game.id
                             }}
                           >
