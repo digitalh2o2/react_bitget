@@ -3,7 +3,6 @@ import Home from "./Home";
 import MainPage from "./MainPage";
 import View from "./View";
 import Nav from "./Nav";
-import Games from "./Games";
 import "../App.css";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 

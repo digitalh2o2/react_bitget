@@ -19,7 +19,12 @@ class Games extends React.Component {
                           <p>No image</p>
                         </div>
                         <div className="content">
-                          <Link to={`${match.url}/${game.name}`}>
+                          <Link
+                            to={{
+                              pathname: `${match.url}/${game.name}`,
+                              params: game.id
+                            }}
+                          >
                             <p>
                               <strong>{game.name}</strong>
                             </p>
@@ -34,7 +39,12 @@ class Games extends React.Component {
                           <img src={game.cover.url} alt={game.name} />
                         </div>
                         <div className="content">
-                          <Link to={`${match.url}/${game.name}`}>
+                          <Link
+                            to={{
+                              pathname: `${match.url}/${game.name}`,
+                              params: game.id
+                            }}
+                          >
                             <p>
                               <strong>{game.name}</strong>
                             </p>
