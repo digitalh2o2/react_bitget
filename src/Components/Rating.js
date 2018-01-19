@@ -10,29 +10,49 @@ class Rating extends React.Component {
     this.circumference = this.normalizedRadius * 2 * Math.PI;
   }
   render() {
-    const { radius, stroke, progress } = this.props;
+    const { radius, stroke, progress, ratings } = this.props;
     const strokeDashoffset =
       this.circumference - progress / 100 * this.circumference;
 
     return (
       <div>
-        <svg height={radius * 2} width={radius * 2}>
-          <circle
-            className="progress-ring__circle"
-            stroke="blue"
-            fill="transparent"
-            strokeWidth={stroke}
-            strokeDasharray={this.circumference + " " + this.circumference}
-            style={{ strokeDashoffset }}
-            stroke-width={stroke}
-            r={this.normalizedRadius}
-            cx={radius}
-            cy={radius}
-          />
-          <text x="43%" y="50%" stroke="#51c5cf" stroke-width="2px" dy=".3em">
-            {Math.ceil(progress)}
-          </text>
-        </svg>
+        {progress >= 80 ? (
+          <svg height={radius * 2} width={radius * 2}>
+            <circle
+              className="progress-ring__circle"
+              stroke="green"
+              fill="transparent"
+              strokeWidth={stroke}
+              strokeDasharray={this.circumference + " " + this.circumference}
+              style={{ strokeDashoffset }}
+              stroke-width={stroke}
+              r={this.normalizedRadius}
+              cx={radius}
+              cy={radius}
+            />
+            <text x="43%" y="50%" stroke="black" stroke-width="1.5px" dy=".3em">
+              {Math.ceil(progress)}
+            </text>
+          </svg>
+        ) : (
+          <svg height={radius * 2} width={radius * 2}>
+            <circle
+              className="progress-ring__circle"
+              stroke="#209cee"
+              fill="transparent"
+              strokeWidth={stroke}
+              strokeDasharray={this.circumference + " " + this.circumference}
+              style={{ strokeDashoffset }}
+              stroke-width={stroke}
+              r={this.normalizedRadius}
+              cx={radius}
+              cy={radius}
+            />
+            <text x="43%" y="50%" stroke="black" stroke-width="1.5px" dy=".3em">
+              {Math.ceil(progress)}
+            </text>
+          </svg>
+        )}
       </div>
     );
   }
