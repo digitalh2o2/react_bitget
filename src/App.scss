@@ -85,6 +85,21 @@ img {
   }
 }
 
+.website-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
 /*
   =====================
   Games Component
