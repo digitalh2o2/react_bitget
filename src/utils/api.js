@@ -34,7 +34,8 @@ module.exports = {
   },
   singleGame(id) {
     const response = fetch(
-      proxyUrl + `https://api-2445582011268.apicast.io/games/${id}?fields=*`,
+      proxyUrl +
+        `https://api-2445582011268.apicast.io/games/${id}?fields=*&expand=genres`,
       {
         method: "GET",
         headers: {

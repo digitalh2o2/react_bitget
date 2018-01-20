@@ -71,6 +71,11 @@ img {
   }
 }
 
+.genres {
+  display: flex;
+  justify-content: space-between;
+}
+
 @keyframes zoom {
   from {
     transform: scale(0);

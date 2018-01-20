@@ -48,7 +48,7 @@ class Rating extends React.Component {
               cx={radius}
               cy={radius}
             />
-            <text x="43%" y="50%" stroke="black" stroke-width="1.5px" dy=".3em">
+            <text x="41%" y="50%" stroke="black" stroke-width="1.5px" dy=".3em">
               {Math.ceil(progress)}
             </text>
           </svg>

@@ -21,6 +21,7 @@ class View extends React.Component {
       .singleGame(id)
       .then(res => res.json())
       .then(res => {
+        console.log(res);
         this.setState({ game: res[0] });
       });
   }
@@ -86,12 +87,25 @@ class View extends React.Component {
                       </div>
                     </div>
                   </div>
-                  <div className="tile is-child box">
-                    <p>Hello</p>
+                  <div className="tile is-child box has-text-centered">
+                    {this.state.game.genres ? (
+                      <div>
+                        <h3 className="subtitle">Genres</h3>
+                        {this.state.game.genres.map(genre => {
+                          return (
+                            <div key={genre.id} className="genres">
+                              <p>{genre.name}</p>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    ) : (
+                      <p>No Genre Data Available</p>
+                    )}
                   </div>
                 </div>
                 <div className="tile is-parent">
-                  <article className="tile is-child notification is-info">
+                  <article className="tile is-child notification is-info has-text-centered">
                     {this.state.game.cover ? (
                       <figure>
                         <img
@@ -112,15 +126,28 @@ class View extends React.Component {
                   <div className="tile is-child box">
                     <div className="title">Summary</div>
                     <p>{this.state.game.summary}</p>
+                    {this.state.game.websites ? (
+                      <div>
+                        <hr />
+                        <p>yes</p>
+                      </div>
+                    ) : (
+                      <div>
+                        <p>No</p>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
               {this.state.game.screenshots ? (
                 <section className="container">
                   <div className="columns is-multiline">
-                    {this.state.game.screenshots.map(shot => {
+                    {this.state.game.screenshots.map((shot, index) => {
                       return (
-                        <div className="column is-one-quarter screenshots">
+                        <div
+                          key={index}
+                          className="column is-one-quarter screenshots"
+                        >
                           <img
                             id="single-shot"
                             src={`//images.igdb.com/igdb/image/upload/t_screenshot_med/${
@@ -130,7 +157,10 @@ class View extends React.Component {
                             onClick={() => this.zoomIn(shot)}
                           />
                           <div id="screenshot-zoom" className="zoomBlock">
-                            <span onClick={() => this.close()} class="close">
+                            <span
+                              onClick={() => this.close()}
+                              className="close"
+                            >
                               &times;
                             </span>
                             <img
