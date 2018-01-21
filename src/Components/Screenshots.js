@@ -22,7 +22,6 @@ class Screenshots extends React.Component {
     blocker.style.display = "none";
   }
   render() {
-    console.log(this.props);
     return (
       <section className="container">
         <div className="columns is-multiline">
