@@ -1,5 +1,6 @@
 import React from "react";
 import Rating from "./Rating";
+import Screenshots from "./Screenshots";
 import api from "../utils/api";
 
 class View extends React.Component {
@@ -10,8 +11,6 @@ class View extends React.Component {
       game: ""
     };
 
-    this.getDate = this.getDate.bind(this);
-    this.zoomIn = this.zoomIn.bind(this);
     this.websiteIcon = this.websiteIcon.bind(this);
   }
 
@@ -37,20 +36,6 @@ class View extends React.Component {
         {month}-{day}-{year}
       </p>
     );
-  }
-
-  zoomIn(shot) {
-    let blocker = document.querySelector("#screenshot-zoom");
-    let imgPop = document.querySelector("#image-pop");
-    blocker.style.display = "block";
-    imgPop.src = `https://images.igdb.com/igdb/image/upload/t_screenshot_med/${
-      shot.cloudinary_id
-    }`;
-  }
-
-  close() {
-    let blocker = document.querySelector("#screenshot-zoom");
-    blocker.style.display = "none";
   }
 
   websiteIcon(site) {
@@ -230,40 +215,7 @@ class View extends React.Component {
                 </div>
               </div>
               {this.state.game.screenshots ? (
-                <section className="container">
-                  <div className="columns is-multiline">
-                    {this.state.game.screenshots.map((shot, index) => {
-                      return (
-                        <div
-                          key={index}
-                          className="column is-one-quarter screenshots"
-                        >
-                          <img
-                            id="single-shot"
-                            src={`//images.igdb.com/igdb/image/upload/t_screenshot_med/${
-                              shot.cloudinary_id
-                            }`}
-                            alt="Screenshot"
-                            onClick={() => this.zoomIn(shot)}
-                          />
-                          <div id="screenshot-zoom" className="zoomBlock">
-                            <span
-                              onClick={() => this.close()}
-                              className="close"
-                            >
-                              &times;
-                            </span>
-                            <img
-                              className="zoom-content"
-                              id="image-pop"
-                              alt="Screenshot"
-                            />
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </section>
+                <Screenshots game={this.state.game} />
               ) : (
                 <section className="input-field">
                   <div>
