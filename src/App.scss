@@ -3,6 +3,23 @@
   Main App
   =====================
 */
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+#root {
+  padding-bottom: 15px;
+}
+
+.site-content {
+  flex: 1;
+}
 
 .input-field {
   display: flex;
@@ -129,4 +146,26 @@ img {
 .ratings {
   display: flex;
   justify-content: space-between;
+}
+
+/*
+  =====================
+  Footer
+  =====================
+*/
+
+.footer {
+  margin-top: auto;
+  position: relative;
+  padding: 20px;
+
+  p,
+  a {
+    text-decoration: none;
+    color: #2155d7;
+
+    &:hover {
+      color: darken(#2155d7, 20%);
+    }
+  }
 }

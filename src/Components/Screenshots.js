@@ -23,7 +23,7 @@ class Screenshots extends React.Component {
   }
   render() {
     return (
-      <section className="container">
+      <section className="container site-content">
         <div className="columns is-multiline">
           {this.props.game.screenshots.map((shot, index) => {
             return (

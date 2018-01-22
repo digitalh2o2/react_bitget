@@ -48,7 +48,7 @@ class MainPage extends React.Component {
     const { searchTerm, games } = this.state;
     const { match } = this.props;
     return (
-      <section>
+      <section className="site-content">
         <div className="container">
           <Search
             value={searchTerm}
@@ -60,8 +60,8 @@ class MainPage extends React.Component {
         </div>
 
         {!games ? (
-          <section>
-            <p>Hi</p>
+          <section className="input-field">
+            <p />
           </section>
         ) : (
           <section>

@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import noimage from "../images/noimage.png";
 
 class Games extends React.Component {
   render() {
-    console.log(this.props);
     const { games, match } = this.props;
     return (
-      <section>
+      <section className="site-content">
         <div className="container has-text-centered the-grid">
           <div className="columns is-multiline">
             {games.map((game, index) => {
@@ -16,7 +16,7 @@ class Games extends React.Component {
                     <div className="box">
                       <article className="media">
                         <div className="media-left">
-                          <p>No image</p>
+                          <img src={noimage} alt="N/A" />
                         </div>
                         <div className="content">
                           <Link

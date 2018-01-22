@@ -38,16 +38,17 @@ class View extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     return (
-      <section>
+      <section className="site-content">
         <div>
           {this.state.game.length === 0 ? (
-            <div className="input-field">
-              <p>Loading...</p>
+            <div className="input-field the-grid">
+              <p>
+                <i className="fas fa-spinner fa-spin fa-3x" />
+              </p>
             </div>
           ) : (
-            <div className="container">
+            <div className="container the-grid">
               <div className="tile is-ancestor">
                 <div className="tile is-4 is-vertical is-parent">
                   <div className="tile is-child box">
@@ -116,7 +117,7 @@ class View extends React.Component {
                       <Websites game={this.state.game} />
                     ) : (
                       <div>
-                        <p>No</p>
+                        <p>No External Websites</p>
                       </div>
                     )}
                   </div>
