@@ -5,7 +5,7 @@ import View from "./View";
 import Nav from "./Nav";
 import About from "./About";
 import "../App.css";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class App extends Component {
   render() {

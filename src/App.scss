@@ -36,7 +36,42 @@ img {
 
 /*
   =====================
-  View Component Images
+  View & Websites Component
+  =====================
+*/
+
+.genres {
+  display: flex;
+  justify-content: space-between;
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.website-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+/*
+  =====================
+  Screenshot Component
   =====================
 */
 
@@ -88,35 +123,6 @@ img {
   }
 }
 
-.genres {
-  display: flex;
-  justify-content: space-between;
-}
-
-@keyframes zoom {
-  from {
-    transform: scale(0);
-  }
-  to {
-    transform: scale(1);
-  }
-}
-
-.website-icons {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-
-  a {
-    color: inherit;
-    text-decoration: none;
-
-    &:hover {
-      opacity: 0.8;
-    }
-  }
-}
-
 /*
   =====================
   Games Component
@@ -128,6 +134,24 @@ img {
 
   &:hover {
     transform: scale(1.05);
+  }
+}
+
+/*
+  =====================
+  Navbar Component
+  =====================
+*/
+
+.active {
+  font-weight: bold;
+}
+
+.navlink-item {
+  color: rgb(162, 157, 154);
+
+  &:hover {
+    color: darken(rgb(162, 157, 154), 20%);
   }
 }
 
@@ -162,10 +186,10 @@ img {
   p,
   a {
     text-decoration: none;
-    color: #2155d7;
+    color: rgb(162, 157, 154);
 
     &:hover {
-      color: darken(#2155d7, 20%);
+      color: darken(rgb(162, 157, 154), 20%);
     }
   }
 }

@@ -30,7 +30,6 @@ class MainPage extends React.Component {
       .then(res => res.json())
       .then(res => {
         this.setState({ games: res });
-        console.log(this.state.games);
       });
     e.preventDefault();
   }
