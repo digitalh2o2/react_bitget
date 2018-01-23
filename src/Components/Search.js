@@ -17,7 +17,9 @@ class Search extends React.Component {
               />
             </div>
             <div className="control">
-              <a className="button is-info">{children}</a>
+              <a className="button is-info" onClick={onSubmit}>
+                {children}
+              </a>
             </div>
           </div>
         </form>
