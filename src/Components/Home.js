@@ -1,5 +1,4 @@
 import React from "react";
-import cover from "../images/cover.jpg";
 
 class Home extends React.Component {
   render() {
@@ -8,7 +7,10 @@ class Home extends React.Component {
         <h1 className="title">React Bitget</h1>
 
         <p>Search for all of your favorite games!</p>
-        <img src={cover} alt="Home Page" />
+        <img
+          src="http://www.8bitdaily.com/wp-content/uploads/2017/01/8bitgaming-e1485276617369.jpg"
+          alt="Home Page"
+        />
       </div>
     );
   }
