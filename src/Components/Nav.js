@@ -5,9 +5,9 @@ class Nav extends React.Component {
   render() {
     return (
       <nav className="navbar">
-        <div class="navbar-brand ">
+        <div className="navbar-brand ">
           <div
-            class="navbar-burger burger"
+            className="navbar-burger burger"
             onClick={() => {
               let toggle = document.querySelector(".nav-toggle");
               toggle.classList.toggle("is-active");
