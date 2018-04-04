@@ -13,6 +13,14 @@ See live [here](https://react-bitget.surge.sh/)
 * [React](https://reactjs.org/)
 * [Sass](https://sass-lang.com/)
 
+## Authors
+
+* Saul Ocampo
+
+## License
+
+This project is licensed under the MIT License
+
 ## Acknowledgements
 * API provided by [IGDB](https://www.igdb.com/api)
 
