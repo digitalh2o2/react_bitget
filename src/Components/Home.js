@@ -8,7 +8,7 @@ class Home extends React.Component {
 
         <p>Search for all of your favorite games!</p>
         <img
-          src="http://www.8bitdaily.com/wp-content/uploads/2017/01/8bitgaming-e1485276617369.jpg"
+          src="https://cdn.arstechnica.net/wp-content/uploads/2018/01/consoles-800x491.jpg"
           alt="Home Page"
         />
       </div>
