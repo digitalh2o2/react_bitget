@@ -29,6 +29,15 @@ img {
 
 /*
   =====================
+  Search Component
+  =====================
+*/
+select {
+  margin-left: 10px;
+  border-radius: 5% !important; }
+
+/*
+  =====================
   View & Websites Component
   =====================
 */

@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "lodash": "^4.17.5",
     "node-sass-chokidar": "0.0.3",
     "npm-run-all": "^4.1.2",
     "react": "^16.2.0",
@@ -11,10 +12,8 @@
     "react-scripts": "1.1.0"
   },
   "scripts": {
-    "build-css":
-      "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
-    "watch-css":
-      "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
+    "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
     "build-js": "react-scripts build",
@@ -26,6 +25,9 @@
   },
   "homepage": "https://digitalh2o2.github.io/react_bitget",
   "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.44",
+    "@babel/preset-env": "^7.0.0-beta.44",
+    "babel-plugin-lodash": "^3.3.2",
     "gh-pages": "^1.1.0"
   }
 }
