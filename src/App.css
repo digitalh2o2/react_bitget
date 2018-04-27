@@ -36,6 +36,9 @@ select {
   margin-left: 10px;
   border-radius: 5% !important; }
 
+.control {
+  display: inherit; }
+
 /*
   =====================
   View & Websites Component

@@ -30,7 +30,7 @@ class Rating extends React.Component {
               cx={radius}
               cy={radius}
             />
-            <text x="43%" y="50%" stroke="black" stroke-width="1.5px" dy=".3em">
+            <text x="43%" y="50%" stroke="black" strokeWidth="1.5px" dy=".3em">
               {Math.ceil(progress)}
             </text>
           </svg>
@@ -43,12 +43,12 @@ class Rating extends React.Component {
               strokeWidth={stroke}
               strokeDasharray={this.circumference + " " + this.circumference}
               style={{ strokeDashoffset }}
-              stroke-width={stroke}
+              strokeWidth={stroke}
               r={this.normalizedRadius}
               cx={radius}
               cy={radius}
             />
-            <text x="41%" y="50%" stroke="black" stroke-width="1.5px" dy=".3em">
+            <text x="41%" y="50%" stroke="black" strokeWidth="1.5px" dy=".3em">
               {Math.ceil(progress)}
             </text>
           </svg>
